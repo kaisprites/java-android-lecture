@@ -1,0 +1,22 @@
+변수의 종류 (저장되는 데이터 유형)
+	1 primitive variable: int, float, char, boolean
+		변수에 값을 저장
+	2 reference variable: array, class, interface
+		변수에 주소를 저장
+		
+	실행되는 동안 사용되는 데이터: RAM
+	실행되는 동안 중간 계산 결과값: CPU
+	
+	실행이 종료되어도 데이터를 저장하기 위해
+	1) 파일에 저장: DATABASE, 빠른 검색에는 적합하지 않음
+	2) 저장/운용하기 위한 별도 프로그램: DATABASE, 빠른 검색에 적합
+	
+	database management system: dbms
+	oracle, mySQL, mariaDB, sqlite, ms-sql, 
+	
+	1) 상품정보
+	2) 게시판
+	3) 회원가입
+	
+	
+	
