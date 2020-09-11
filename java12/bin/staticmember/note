@@ -1,0 +1,64 @@
+static variable <-> automatic instance
+
+동적할당: new를이용한 객체생성시 힙영역에 메모리할당
+Tv tv1 = new Tv(); //tv1.color, tv1.price
+Tv tv2 = new Tv(); //tv2.color, tv2.price
+
+정적할당: 컴파일시 콜스택에 메모리할당
+
+클래스 원본 영역: 멤버변수, 멤버메소드, 정적변수
+
+스택 영역: main, static variable/method
+FILO
+
+힙 영역: instances
+
+
+개념정리
+1)인스턴스변수와 정적변수의 차이점:
+	정적변수는 data영역에 생성되며 class이름으로 접근한다.
+	인스턴스변수는 heap영역에 생성되며 instance이름으로 접근한다.
+
+2) 멤버변수 3개 클래스객체가 5개
+	stack영역에 만들어진 변수의 개수:5개
+	heap영역에 만들어진 변수의 개수:15개
+	
+3) static method를 만드는 이유:
+	instance가 아닌 class 그 자체의 동작을 구현할때 사용한다.
+	static method: Integer.parseInt(), String.toValue() 등
+
+4) 일반method와 static method의 차이:
+	static method에서는 static variable만 호출이 가능하다.
+
+5) static method를 사용하면 좋은 점:
+	instance를 생성하지 않고도 바로 class method를 호출할 수 있다.
+
+6) static method 정의시 static변수만 사용가능하고 instance변수는 사용이 불가능한 이유:
+	instance가 없어도 static method는 호출이 가능한데 instance변수는 instance가 있어야만 사용할 수 있다.
+
+7) 변수의 종류
+	기본형변수,참조형변수,자동변수,정적변수,전역변수,지역변수
+
+8) 전역변수와 지역변수의 차이:
+	전역변수는 코드 어느위치에서도 접근이 가능하다. 지역변수는 선언한 scope와 그 하위 scope에서만 접근가능
+
+9) 참조형변수는 메모리의 어느 영역을 참조하는가?
+	heap영역을 참조
+
+10) 전역/지역을 나누는 기준
+	모든 메소드와 모든 scope가 참조할 필요가 있는 변수는 전역으로 지정
+
+11) int[] num = new int[10];를 메모리에서 처리하는 방법
+	stack에 num 변수가 선언되고 이 변수는 heap의 int[10]을 가리킨다.
+
+12) final int money=10000;을 메모리에서 처리하는 방법
+	data 영역에 money=10000 가 선언된다
+
+13) public static void main(String[] s) {
+		Student s1 = new Student("홍길동", "mega", "011");
+		Student s2 = new Student("김길동", "the", "012");
+		System.out.println(s1);
+}
+	stack에 s1, s2 변수가 선언되고 각각 heap의 Student 인스턴스를 참조한다.
+	Student 인스턴스는 다시 heap영역 내부의 String pool에 있는 String literal들을 참조한다.
+	

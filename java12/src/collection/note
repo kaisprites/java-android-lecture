@@ -1,0 +1,9 @@
+생성자
+
+new 객체생성시 자동 호출되는 메서드
+public 클래스 이름()
+생성자는 반드시 객체를 반환하므로 반환문 return을 사용하지 않는다
+overloadable
+new classname()
+new classname(arg1)
+new classname(arg1, arg2)
