@@ -1,0 +1,22 @@
+1) JDBC란?
+	java에서 DB에 접속할 수 있게 만들어주는 라이브러리
+2) db프로그램의 절차
+	create, read, update, delete
+3) jdbc에서 connector의 역할
+	db에 연결하는 것
+4) 자바로 만든 UI에서 입력한 값들을 DB에 넣으려면?
+	1 connector 연결
+	2 db 연결
+	3 SQL 생성
+	4 SQL 전송
+5) db연결시 필요한 정보 4가지
+	1 connecter name
+	2 address
+	3 id
+	4 password
+6) 자바에서 특정한 기능을 가진 부품을 만들때 정의하는 방법
+	메소드를 정의한다
+	메소드는 클래스 안에 함수 형태로
+7) 특정 기능을 처리하는 메소드에서 입력값과 반환값의 의미는?
+	입력값parameter: 메소드를 실행하기 위해 필요로 하는 값
+	반환값return: 메소드가 기능한 뒤 결과값
