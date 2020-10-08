@@ -1,0 +1,69 @@
+1 protocol이란?
+	통신 시스템이 데이터를 교환하기 위한 규약
+2 ip란?
+	인터넷에 연결된 단말에 부여된 주소
+3 현재 ip address의 버전은?
+	ipv4/ipv6 병용
+4 동일한 ip를 가지는 시스템에서 서비스를 구분할 목적으로 부여한 번호
+	port
+5 TCP/IP의 4계층
+	접속 -> 네트워크 -> 전송 -> 응용
+6 네트워크 전송 방식 2가지
+	TCP, UDP
+7 TCP의 장점
+	연결지향적이므로 data의 신뢰도가 높다
+8 TCP 전송방식
+	연결생성, 자료전송, 연결종료
+9 UDP 전송방식
+	자료전송
+10 packet이란?
+	data의 전송단위
+11 udp 전송방식에서 packet 객체 생성시 필요한 입력값
+	출발지, 도착지, 내용
+12 tcp 전송에서 사용한 socket 2개
+	server, client
+13 udp 전송에서 사용한 socket 이름
+	receiver
+14 tcp와 udp중 packet객체 생성이 필요한 방식
+	tcp, udp
+15 port 지정하지 않은 경우 port를 처리하는 방식
+
+
+
+1 IP
+인터넷에 연결된 단말에 부여되는 식별자
+2 DNS
+IP의 이해하기 쉬운 별명
+3 Domain Name Server의 역할
+IP와 DNS를 연결
+4 TCP/IP 4계층중 1계층
+Access Layer(Physical+Datagram): data의 물리적 전송에 대한 계층 
+5 2계층
+Network Layer: data의 논리적 전송에 대한 계층
+6 3계층
+Transport Layer: 각 단말 사이의 연결 프로토콜에 대한 계층
+7 4계층
+Application Layer(Session+Presentation+Application): end user가 실제로 이해하는 통신에 대한 계층
+8 protocol
+두 단말이 통신하기 위해 정해 놓은 통신규칙
+9 URL
+Uniform Resource Locator: 인터넷상에서 리소스의 위치를 나타내는 지시자
+10 객체화
+class를 instance로 만드는 것
+11 socket
+packet을 주고 받기 위한 객체
+12 port
+동일한 ip를 사용하는 시스템에서 service별로 구분하기 위한 번호
+13 TCP/IP 4계층 중 어느 영역을 담당하는가?
+3~4계층
+14 node, host, server, client
+node: data가 거쳐가는 지점들
+host: 단말의 요청을 받아 data를 처리하는 주체
+server: client의 요청을 받아 응답하는 단말
+client: server에 요청하는 단말
+15 URL의 구조를 예를 들어
+https://search.naver.com/search.html?query=asdf
+https: 프로토콜
+search.naver.com: 도메인 이름
+search.html: resource의 이름 
+?query=asdf: query string

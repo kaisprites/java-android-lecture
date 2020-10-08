@@ -1,0 +1,18 @@
+/search.naver?sm=top
+=> 	query string
+=> 	client가 server에 특정한 page request 할때 get method 일 경우
+	전달 data는 주소 뒤에 query string 형태로 전달
+=>  browser로 네트워크 전송할 때에는 주로 html문서
+	anchored hypertxt: hypermedia
+=>  html 전송할 때에는 html 방식으로
+
+
+network program에는 socket object 필요
+socket object works like telephone
+client socket, server socket
+tcp: uses 2 server sockets
+	response socket for connect request
+	data transfer socket
+
+tcp server waits for connection request
+several tcp clients...
