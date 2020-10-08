@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click (function () {
+			$.ajax({
+				url: "check.jsp",
+				data: {
+					id: $('#id').val()
+				},
+				success: function(result){
+					$('#d1').append(result+"<br>")
+				}
+			})
+		})
+		
+		$('#b2').click(function () {
+			$.ajax({
+				url: "reply.jsp",
+				data: {
+					reply: $('#reply').val()
+				},
+				success: function(result) {
+					$('#d2').append(result)
+				}
+			})
+		})
+		$('#b3').click(function () {
+			$.ajax({
+				url: "img.jsp",
+				success: function(result) {
+					$('#d2').append(result)
+				}
+			})
+		})
+		$('#b4').click(function () {
+			$.ajax({
+				url: "reply.jsp",
+				data: {
+					reply: $('#reply').val()
+				},
+				success: function(result) {
+					$('#d2').append(result)
+				}
+			})
+			$.ajax({
+				url: "img.jsp",
+				success: function(result) {
+					$('#d2').append(result)
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	id: <input text="text" id="id">
+	<button id="b1">중복체크</button>
+	<hr>
+	<div id="d1"></div>
+	<hr>
+	reply text: <input type="text" id="reply">
+	<button id="b2">reply text</button>
+	<button id="b3">reply img</button>
+	<button id="b4">reply text+img</button>
+	<hr>
+	<div id="d2"></div>
+</body>
+</html>

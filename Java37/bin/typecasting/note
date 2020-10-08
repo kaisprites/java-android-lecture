@@ -1,0 +1,39 @@
+1 형변환이 무엇인가?
+	Data의 type를 변환하는 것
+2 자동형변환은 무엇인가?
+	코드에서 (typename) 을 명시하지 않고 변환하는 것. 큰 자료형에 작은 값을 넣을 때 이루어진다.
+3 강제형변환은 무엇인가?
+	코드에서 (typename) 을 명시하여 변환하는 것. 크기에 무관하게 형변환할 수 있으나 데이터 손실을 야기할 수 있다.
+4 강제형변환을 할 수 없을 때는?
+	primitive type에서 적절하지 않은 형변환이나(실수->문자, boolean 형변환 등) derived type에서 상속관계에 있지 않은 type끼리의 형변환은 할 수 없다.
+5 클래스 다이어그램을 그리시오.
+	[Superclass] <|--- [Subclass]
+6 코드와 비교하면서 자동형변환과 강제형변환을 확인하시오.
+	byte x = 100;
+	int y = x; //자동형변환
+	int a = 200;
+	byte b = (byte)a; //강제형변환. 데이터 손실이 일어난다.
+7 클래스간 형변환은 언제 쓸 수 있는가?
+	클래스가 서로 상속관계에 있을 때
+8 클래스간 자동 형변환을 부르는 용어
+	upcast(상위 클래스로 형변환)
+9 형변환을 영어로
+	casting(강제형변환), promotion(자동형변환)
+10 클래스간 강제 형변환을 부르는 용어
+	downcast(하위 클래스로 형변환)
+11 강제 형변환의 문법은?
+	(typename)variablename
+12 ArrayList의 사용목적
+	크기가 가변적이고 형변환 가능한 자료형의 자료들(<Object> 등)을 모두 넣을 수 있는 가변적 배열을 사용하기 위함
+13 ArrayList에 값을 넣을 때 내부적으로 일어나는 일
+	primitive type => (boxing) => Wrapper class => (upcasting) => Object type
+	derived type => (upcasting) => Object type
+14 ArrayList에서 값을 꺼낼 때 내부적으로 일어나는 일
+	Object type => (downcasting) => Wrapper class => (unboxing) => primitive type
+	Object type => (downcasting) => derived type
+15 Wrapper class(포장 클래스)란?
+	primaitive type를 다루는 method들을 구현한 클래스
+16 boxing이란?
+	primitive type variable을 Wrapper class instance로 만드는 것
+17 unboxing이란?
+	Wrapper class instance를 primitive type variable로 변환하는 것

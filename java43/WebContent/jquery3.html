@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click (function() {
+			$.ajax({ /* 비동기통신 */
+				url: "call.jsp",
+				data: {
+					age: $('#age').val()
+				},
+				success: function(result) {
+					console.log("받은 데이터: " + result)
+					if(result == '성인입니다') {
+						alert("성인");
+					} else {
+						alert("성인 아님");
+					}
+				}
+			})			
+		})
+		
+		/* var oReq = new XMLHttpRequest();
+		
+		*/
+	})
+</script>
+</head>
+<body>
+	나이 <input type="text" id="age">
+	<button id="b1">성인인가요</button>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xml: Extensible Markup Language -->
+<!-- 네트워크로 연결된 노드간 많은 데이터 전달 목적
+	data 앞에 key를 더해 value를 명시
+	<keyname>value</keyname> -->
+<result>
+	<total>100000</total>
+	<date>2020.10.05</date>
+	<fields>신용카드</fields>
+	<name>홍길동</name>
+</result>

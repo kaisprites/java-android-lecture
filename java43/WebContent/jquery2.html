@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('button#b1').click(function() {
+			$(this).text('바뀌었다')
+			bText = $(this).text()
+			console.log('버튼 사이의 텍스트는 ' + bText)
+		})
+		$('input[type=button]').click(function() {
+			inputValue = $(this).val()
+			console.log('value of input = ' + inputValue)
+			$(this).val('내가 여기 들어가요');
+		})
+	})
+</script>
+</head>
+<body>
+	<button>기능 처리가 함수 중심으로</button>
+	<input type="text" name="food" value="나는 input의 값">
+	<input type="button" value="입력한 값">
+</body>
+</html>

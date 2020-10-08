@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//결제하기 버튼 클릭시
+		$('#b1').click(function(){
+			$.ajax({
+				url: "pay.jsp",
+				data: {
+					price: $('#price').val(),
+					paytype: $('input:radio[name="paytype"]:checked').val()
+				},
+				success: function(result) {
+					alert(result);
+				}
+			})
+		})
+		
+		//id 유효성 검사
+		$('#id').keyup(function(event) {
+			$.ajax({
+				url: "lengthcheck.jsp",
+				data: {
+					id: $('#id').val()
+				},
+				success: function(result) {
+					$('#d1').html(result)
+				}
+			})
+		})
+		
+		//pw 동일성 검사
+		$('#pw').keyup(pwcheck)
+		$('#pw2').keyup(pwcheck)
+		
+		function pwcheck(event) {
+			$.ajax({
+				url: "pwcheck.jsp",
+				data: {
+					pw: $('#pw').val(),
+					pw2: $('#pw2').val()
+				},
+				success: function(result) {
+					$('#d2').html(result)
+				}
+			})
+		}
+		
+		//id 중복 검사
+		$('#b2').click(function(event) {
+			$.ajax({
+				url: "idcheck.jsp",
+				data: {
+					id: $('#id').val()
+				},
+				success: function(result) {
+					alert(result)
+				}
+			})
+		})
+		
+		//인증번호 받아오기
+		$('#b3').click(function(event) {
+			$.ajax({
+				url: "telauth.jsp",
+				data: {
+					tel: $("#tel").val()
+				},
+				success: function(result) {
+					$('#d3').text(result)
+				}
+			})
+			
+		})
+	})
+</script>
+</head>
+<body>
+<h1> 오늘은 4일차 입니다.</h1>
+
+<p>
+	결제금액: <input type="text" id="price">
+	결제수단:
+		<input type="radio" name="paytype" value="계좌이체">계좌이체
+		<input type="radio" name="paytype" value="신용카드">신용카드
+		<input type="radio" name="paytype" value="휴대전화">휴대전화
+	<button id="b1">결제하기</button>	
+</p>
+<p>
+	아이디: <input type="text" id="id">
+	패스워드: <input type="text" id="pw">
+	패스워드 확인: <input type="text" id="pw2">
+	<button id="b2">id중복검사</button>	
+</p>
+<div id="d1"></div>
+<div id="d2"></div>
+<p>
+	인증 전화번호: <input type="text" id="tel">
+	<button id="b3">인증번호 받기</button>
+</p>
+<hr color="red">
+<div id="d3"></div>
+</body>
+</html>

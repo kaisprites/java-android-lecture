@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click (callAjax)
+		
+		$('input').keydown(function(event) {
+			if(event.keyCode == '13') callAjax();
+		})
+		
+		function callAjax() {
+			$.ajax({ /* 비동기통신 */
+				url: 'call2.jsp',
+				data: { grade: $('#grade').val() },
+				success: function(result) {
+					console.log(result);
+					if(result=="최우수" || result=="우수") alert("통과");
+					else alert("재시험")
+					;
+				}
+			})			
+		}
+	})
+</script>
+</head>
+<body>
+	당신의 성적 <input type="text" id="grade">
+	<button id="b1">결과보기</button>
+</body>
+</html>
