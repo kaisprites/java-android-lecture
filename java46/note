@@ -1,0 +1,7 @@
+request: 	client로부터 넘어온 데이터를 받기 위한 객체
+response: 	서버가 클라이언트에게 지시하는 객체
+out: 		instance of Printwriter
+			네트워크로 연결된 상대 노드에 텍스트를 보내고자 하는 경우
+session:	client browser와 server의 연결
+			연결한 동안 지속적으로 다양한 곳에서 사용할 데이터 지정 후 사용 가능
+application:사이트가 down 될 때까지 유지시키려는 data를 지정한 후 사용 가능
