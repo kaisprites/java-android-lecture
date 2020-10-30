@@ -1,0 +1,8 @@
+ORM (Object Relation Mapping): mapper 파일
+1) table당 1개
+2) 테이블이 10개면 10개의 mapper
+	(1) VO
+	(2) DAO
+	(3) mapper파일(crud, orm정의)
+	
+namespace: 이름공간 => 태그의 역할 구분
