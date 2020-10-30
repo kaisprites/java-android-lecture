@@ -1,0 +1,33 @@
+Dependency ������: library�� �Ұ�����
+
+context: project�� ������ ������ �ܾ�
+unit test ���� �׽�Ʈ (����߽� �׽�Ʈ) <-> ���� �׽�Ʈ(���� ��ü �׽�Ʈ)
+
+spring ���� �ܰ�
+1 project facets(����): java version, web server ����
+2 POM.XML
+	1) �⺻�Ӽ� ����: java version, spring framework version
+	2) ���̺귯�� ����: dependency
+	
+1 스프링을 사용하는 이유: 유지보수의 편의성, 리소스 관리 효율성 
+2 프레임워크: 개발의 일관성과 편의성을 위해 제시된 개발 환경
+3 프레임워크의 예시: Eclipse, Visual Studio, Spring, Django, Node.js, Angular, Vue
+4 MVC2와 MVC1의 차이점:	MVC1은 jsp 파일이 모든 요청을 처리하지만,
+					MVC2는 Dispatcher가 요청을 받아 각 오브젝트에 요청을 분배한다.
+5 MVC stands for: Model, View, Controller
+6 front 관련 파일의 종류: css, js, jsp: src/main/webapp 폴더
+7 back 관련된 파일의 종류: java, class, jar: src/main/java 폴더나 (username)/.m2 폴더 등
+8 view의 2가지 구분
+9 Annotation의 예시:	@Override(오버라이드), @Deprecated(퇴역),
+				 	@Controller(컨트롤러), @RequestMapping(uri-메소드 매핑),
+				 	@Service(서비스),	@Autowired(
+10 autowired Annotation의 역할: repository Annotation이 붙은 적절한 라이브러리에서 객체를 생성하여 주입한다.
+11 controller Annotation의 역할: 한 페이지를 
+12 front controller에 해당하는 클래스과 설정파일 이름: (클래스명)Controller, web.xml
+13 pom.xml 파일의 역할 2가지: Maven 프로젝트를 자동화하고 필요시 라이브러리를 설치한다. 
+14 project facet의 역할 2가지: java와 library 등의 버전을 설정하고 web server와 연결한다.
+15 spring 어플리케이션의 설정 순서
+	project facet에서 java 버전과 web server를 설정
+	pom.xml 파일에서 java 버전과 spring 버전을 설정, 필요한 의존 라이브러리를 import 한다.
+16 singleton이란? instance가 1개만 생성되어야 할 때 instance의 생성을 통제하는 방법론
+	객체가 singleton이 아닌 경우 multithread 되었을 때 충돌이 일어날 수 있다.

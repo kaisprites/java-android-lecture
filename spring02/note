@@ -1,0 +1,28 @@
+HandlerMapper Class: 프론트컨트롤러가 요청받은 주소를 처리할 객체의 메소드를 구해옴.
+
+key		value
+요청주소	컨트롤러 객체의 method
+a.do	AController의 a()
+@Controller 를 달면 @requestMapping 정보를 스캔하면서 등록
+
+ViewResolver Class: 프론트컨트롤러가 결과를 담을 페이지를 호출해야 할 때
+					프론트컨트롤러에게 알려준다
+					
+					
+1 서블릿과 jsp의 관계: jsp는 서블릿을 구현하는 문서이다? 
+2 jsp가 서블릿으로 변환되는 시기: 웹서버가 was에 
+3 web.xml의 역할:
+4 servlet이 만들어지면 web.xml에 추가해야 할 태그 2개
+5 url-pattern의 역할: 
+6 spring framework에서 frontController의 역할 
+
+1 클라이언트가 웹서버에 html을 요청한다.
+2 웹서버가 디스패처에 jsp 동적 처리를 요청한다.
+3 디스패처는 핸들러매퍼에 jsp 동적 처리와 관련된 메서드의 위치를 요구한다.
+4 핸들러매퍼는 메서드를 반환한다.
+5 디스패처는 컨트롤러에 jsp문서에 따른 입력데이터의 처리를 요청한다.
+6~10 컨트롤러는 DB와 통신하여 data를 반환한다.
+11~12 디스패처는 뷰리졸버에 목표 jsp 리소스의 위치를 요청하여 리소스를 받는다.
+13~14 뷰에게서 적절한 jsp 리소스를 반환받는다.
+15 jsp로부터 html을 동적 생성하여 웹서버에 반환한다.
+16 동적 생성한 html을 클라이언트에 전송한다.
