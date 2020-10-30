@@ -1,0 +1,61 @@
+Taxi t = new Taxi()
+t.run(), t.stop
+t == 100주소
+
+a.jsp
+Car t2 = t; //t2 = 100주소
+t2.run();
+//dependency injection: 결합도가 낮음
+
+b.jsp
+Taxi t2 = t
+t2.stop()
+//결합도가 높음
+
+coupling결합도가 낮고(dependency는 대체가능해야 한다)
+
+cohesion응집도가 높아야(하나의 method는 하나의 기능만 구현해야 한다)
+
+-------------------------------------------------------------------------------
+Dependency Injection
+=> IoC: Inversion of Control (객체 제어의 역전)
+=> 객체생성의 주체가 프로그래머에서 Spring으로 넘어감
+
+AOP => 메서드 단위로 조립하는 개념
+
+-tomcat이 web project를 시작할때 가장 먼저 읽어 프로젝트 정보를 가져오는 파일의 이름: web.xml
+-리스너:	프로젝트가 시작되면 자동으로 실행시킬 내용이 있으면
+		리스너 클래스를 만들어 자동호출할 수 있다.
+-DispatcherServlet 호출시기: /가 호출되면
+
+pomxml - web.xml - root-context.xml - servlet-context.xml
+
+------------------------------------------------------
+0) 모듈이란?: 기능을 나타내는 독립된 단위
+1) di란?: 의존성주입 dependency injection 클래스의 상호 의존 관계를 bean 설정정보 바탕으로 컨테이너가 주입
+2) ioc란?: 제어역전. 객체생성의 주체가 컴파일러가 됨 inversion of control
+3) oop란?: 객체지향프로그래밍 object oriented programming 여러 객체를 가지고 조립하는 프로그래밍
+4) oop의 2대원칙: low coupling, high cohesion
+5) pom.xml의 역할: 스프링의 시작 설정값 (자바버전, 스프링버전, library dependency)
+6) tomcat이 webapplication을 인식하는 첫번째 xml 파일: web.xml
+7) web.xml에 정의되어있는것:
+(1) listener+설정파일 (2) dispatcher servlet+설정파일 (3) dispatcher servlet이 호출될 때: /가 호출되면 
+8) tomcat이 인식하는 xml파일 순서: web.xml - root-context.xml - servlet-context.xml
+9) root-context.xml의 역할: singleton 객체의 설정 (view와 관련되지 않은 부분의 bean)
+10) dispatcher servlet의 설정내용을 담은 파일: servlet-context.xml
+11) dispatcher servlet은 언제 호출되고 어떻게 알 수 있는가: client로부터 요청을 받아 /가 들어가는 파일이 실행될 때
+12) jsp와 servlet의 관계와 역할: jsp는 servlet을 http로 사용할 수 있게 한 것이며 http로 요청을 받고 응답해준다.
+13) 스프링에서 사용하는 디자인패턴: 프로토타입, 싱글톤, 팩토리
+
+1) JSP가 요청되고 나서 내부 처리되는 순서를 그림을 그려서 설명:
+	(1) JSP가 서블릿으로 컴파일 되는 시기: client 로부터 최초의 JSP request를 요청받았을때
+	(2) 한번 서블릿으로 컴파일 되고 나서 요청이 또 들어오면:	이미 존재하는 서블릿을 사용한다.
+		코드가 수정되었을 때 다시 컴파일 한다.
+2) 서블릿 생명주기
+	1 웹브라우저 요청
+	2 JSP컨테이너의 java소스 생성
+	3 컴파일
+	4 응답:
+	5 init()
+	6 service(), doGet(), doPost()
+	6 destroy()

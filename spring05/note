@@ -1,0 +1,33 @@
+template in mvc = view (html)
+
+controller는 view에 접근할 수 있다 (view에 직접 접근은 불가능)
+
+singleton 객체만드는 방법: 1 annotation autowired 2 설정파일 root-context.xml javax.inject 
+src/main/resources로 옮겨줄것이다
+
+jstl: jsp scriptlet을 html tag처럼 사용
+junit: 유닛테스트
+
+=>context file singleton 빈객체로 만들클래스정의
+mybatis: google jdbc library
+ibatis: apache재단
+
+dbcp라이브러리를 mybatis내부에서 사용할수있게
+
+mysql5.5에 연셜할 수 있는 jdbc라이브러리
+
+spring-framework에서 mybatis를 지원하는 라이브러리
+
+ORM(Object Relational Mapping)
+Object: Java의 VO
+		멤버변수 / get / set 메서드
+Relational: RDB의 table
+			field (항목, 열, 속성명)
+=> ROW 하나당 VO가 만들어진다
+=> 멤버변수 이름 == db테이블 항목명
+=> 어느 테이블에 어떤 VO를 매핑할 지 지정 (mapper 팡리)
+=> mapper는 테이블당 하나
+=> mapper는 ORM을 정의하는 역할을 담당
+
+Controller <- Service <- DAO <- myBatis <- dbcp <- jdbc
+
