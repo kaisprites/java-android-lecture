@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main8Activity">
+
+    <Button
+        android:id="@+id/writeSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내장 메모리에 파일 쓰기"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/readSD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내장 메모리에 파일 읽기"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Company" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Phone" />
+
+    <Button
+        android:id="@+id/addrWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="연락처저장"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/loadAddr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="연락처가져오기"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+</LinearLayout>

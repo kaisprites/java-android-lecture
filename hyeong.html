@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let stdin = "12345";
+        const _firstletter = "형항핫흣흡흑혀하흐";
+        const _hangulletter = "형혀어엉항앙핫앗흣읏하아흐으흑윽흡읍";
+        const tempcode = `혀어어어어어어어엉........ 핫. 혀엉..... 흑... 하앗... 흐윽... 형. 하앙. 혀엉.... 하앙... 흐윽... 항. 항. 형... 하앙. 흐으윽... 형... 흡... 혀엉.. 하아아앗. 혀엉.. 흡... 흐읍... 형.. 하앗. 하아앙... 형... 하앙... 흐윽... 혀어어엉.. 하앙. 항. 형... 하앙. 혀엉.... 하앙. 흑... 항. 형... 흡  하앗. 혀엉..... 흑. 흣`
+        let stack = Array(1000).fill(null).map(e=>new Array());
+        let stackPointer = 3;
+        //stack 0 : stdin
+        //stack 1 : stdout
+        //stack 2 : stderr
+        //stack 3~ : normal stack
+        class Fraction {
+            constructor(numerator = 0, denominator = 1, nsign = false) {
+                if(!isNaN(numerator) && !isNaN(denominator))
+                {
+                    this.numerator = numerator;
+                    this.denominator = denominator;
+                    this.nsign = nsign;
+                }
+                else this.denominator = 0;
+            }
+
+            toString () {
+                if(!this.denominator._isNaN) {
+                    if(this.denominator != 1) return (this.nsign?"-":"") + this.numerator + "/" + this.denominator;
+                    else return this.numerator+[];
+                }
+                else return NaN;
+            }
+
+            valueOf () {
+                if(!this.denominator._isNaN) return (this.nsign?-1:1) * (this.numerator / this.denominator);
+                else return NaN;
+            }
+
+            add (t) {
+                if(t.denominator == 0) return NaN;
+                if(this.denominator == 0) return NaN;
+                let a = this.numerator * (this.nsign?-1:1);
+                let b = this.denominator;
+                let c = t.numerator * (t.nsign?-1:1);
+                let d = t.denominator;
+                let e = a*d+b*c;
+                let f = b*d;
+                if(e<0) { this.nsign = true; e = Math.abs(e); }
+                else this.nsign = false;
+                if (e == 0) {
+                    this.numerator = 0;
+                    this.denominator = 1;
+                }
+                else if(e>f) {
+                    while(e%f!=0) [e,f]=[f,e%f];
+                    this.numerator = e;
+                    this.denominator = f;
+                }
+                else if (e<f) {
+                    while(f%e!=0) [f,e]=[e,f%e];
+                    this.numerator = e;
+                    this.denominator = f;
+                }
+                else {
+                    this.numerator = 1;
+                    this.denominator = 1;
+                }
+            }
+
+            multiple (t) {
+                if(t.denominator == 0) return NaN;
+                if(this.denominator == 0) return NaN;
+                let a = this.numerator;
+                let b = this.denominator;
+                let c = t.numerator;
+                let d = t.denominator;
+                let e = a*c;
+                let f = b*d;
+                console.log(a, b, c, d, e, f);
+                this.nsign = Boolean(this.nsign ^ t.nsign);
+                if (e == 0) {
+                    this.numerator = 0;
+                    this.denominator = 1;
+                }
+                else if(e>f) {
+                    let g = e;
+                    let h = f;
+                    while(g%h!=0) [g,h]=[h,g%h];
+                    this.numerator = parseInt(e/h);
+                    this.denominator = parseInt(f/h);
+                }
+                else if (e<f) {
+                    let g = f;
+                    let h = e;
+                    while(g%h!=0) [g,h]=[h,g%h];
+                    this.numerator = parseInt(e/h);
+                    this.denominator = parseInt(f/h);
+                }
+                else {
+                    this.numerator = 1;
+                    this.denominator = 1;
+                }
+            }
+        }
+        function stackPopper(stack, stkPtr) {
+            if(stkPtr == 0 && stack[stkPtr].length == 0) {
+                if(stdin.length > 0){
+                    var temp = stdin.charCodeAt(0);
+                    stdin = stdin.slice(1,stdin.length-1);
+                    return temp;
+                }
+                else return new Fraction(0,0,false);
+            }
+            else if(stkPtr == 1 && stack[stkPtr.length] == 0) {
+                return undefined;
+            } 
+            else if(stkPtr == 2 && stack[stkPtr.length] == 0) {
+                return undefined;
+            }
+            else if(stack[stkPtr.length] == 0) return new Fraction(0,0,false);
+            else return stack[stkPtr].pop();
+        }
+
+        function opMultiple (cl) {
+            console.log(cl.hangul + " " + cl.number);
+            stack[stackPointer].push(new Fraction(cl.hangul * cl.number, 1));
+            console.log(stack[stackPointer].slice().map(e=>e.toString()));
+        }
+        
+        function opAdder (cl) {
+            var adder = new Fraction(0,1);
+            for(let i=0; i<cl.hangul; i++){
+                var temp = stackPopper(stack, stackPointer);
+                if(temp != undefined) adder.add(temp);
+                else return undefined;
+            }
+            stack[cl.number].push(adder);
+            console.log(stack[cl.number].slice().map(e=>e.valueOf())); 
+            return true; 
+        }
+
+        function opMultiplier (cl) {
+            console.log(cl.hangul + " " + cl.number + " " + stackPointer);
+            var multiplier = new Fraction(1,1);
+            for(let i=0; i<cl.hangul; i++){
+                var temp = stackPopper(stack, stackPointer);
+                console.log(temp);
+                if(temp != undefined) multiplier.multiple(temp);
+                else return undefined;
+                console.log(multiplier);
+            }
+            stack[cl.number].push(multiplier);
+            console.log(stack[cl.number].slice().map(e=>e.valueOf()));
+            return true;
+        }
+
+        function opNegater (cl) {
+            var adder = new Fraction(0,1);
+            for (let i=0; i<cl.hangul; i++) {
+                if(cl.hangul > stack[stackPointer].length) return undefined;
+                let temp = stack[stackPointer][stack[stackPointer].length-1-i];
+                adder.add(stack[stackPointer][stack[stackPointer].length-1-i] = new Fraction(temp.numerator, temp.denominator, Boolean(temp.nsign^true)));
+            }
+            stack[cl.number].push(adder);
+            console.log(stack[cl.number].slice().map(e=>e.valueOf()));
+            return true;
+        }
+
+        function opInverter (cl) {
+            var multiplier = new Fraction(1,1);
+            for (let i=0; i<cl.hangul; i++) {
+                if(cl.hangul > stack[stackPointer].length) return undefined;
+                let temp = stack[stackPointer][stack[stackPointer].length-1-i];
+                multiplier.multiple(stack[stackPointer][stack[stackPointer].length-1-i] = new Fraction(temp.denominator, temp.numerator));
+            }
+            stack[cl.number].push(multiplier);
+            console.log(stack[cl.number].slice().map(e=>e.toString()));
+            return true;
+        }
+
+        function opDuplicator (cl) {
+            var origin = stack[stackPointer][stack[stackPointer].length-1];
+            for (let i=0; i<cl.hangul; i++)
+                stack[cl.number].push(origin);
+            stackPointer = cl.number;
+            console.log(stack[cl.number].slice().map(e=>e.valueOf()));
+        }
+
+        function Interpreter () {
+            let code = tempcode;
+            if(code[code.length-1] != " ") code = code.concat(" ");
+            let mode = "";
+            let countLetters = {hangul:0, number:0}
+            for (var idx = 0;code[idx] != undefined; idx++) {  
+                let letter = code[idx];
+                console.log(letter);
+                if(_hangulletter.search(letter) >= 0 && letter != "."){
+                    if(_firstletter.search(letter) > 0 && countLetters.number != 0) {
+                        idx--;
+                        letter = " ";
+                    }
+                    else
+                        countLetters = {hangul: countLetters.hangul+1, number: countLetters.number};
+                }
+                switch(letter) {
+                    case "형": case "엉": mode = "multiple"; break;
+                    case "항": case "앙": mode = "adder"; break;
+                    case "핫": case "앗": mode = "multiplier"; break;
+                    case "흣": case "읏": mode = "negater"; break;
+                    case "흡": case "읍": mode = "inverter"; break;
+                    case "흑": case "윽": mode = "duplicator"; break;
+
+                    case ".":
+                        countLetters = {hangul: countLetters.hangul, number: countLetters.number+1};
+                        break;
+                    
+                    case "…": case "⋯": case "⋮":
+                        countLetters = {hangul: countLetters.hangul, number: countLetters.number+3};
+                        break;
+                    
+                    case " ":
+                        console.log(countLetters.hangul, countLetters.number);
+                        switch(mode) {
+                            case "multiple":
+                                console.log("opMultiple");
+                                opMultiple(countLetters);  
+                                break;
+                            
+                            case "adder":
+                                console.log("opAdder");
+                                if(opAdder(countLetters) == undefined) return;
+                                break;
+                            
+                            case "multiplier":
+                                console.log("opMultiplier");
+                                if(opMultiplier(countLetters) == undefined) return;
+                                break;
+
+                            case "negater":
+                                console.log("opNegater");
+                                if(opNegater(countLetters) == undefined) return;
+                                break;
+
+                            case "inverter":
+                                console.log("inverter");
+                                if(opInverter(countLetters) == undefined) return;
+                                break;
+
+                            case "duplicator":
+                                console.log("opDuplicator");
+                                opDuplicator(countLetters);
+                                break;
+                        }
+                        mode = "";
+                        countLetters = {hangul:0, number: 0};
+                        break;
+                }
+                if(stack[1].length > 0) {
+                    for(var i=0; i<stack[1].length; i++) {
+                        let temp = stack[1][i];
+                        let result;
+                        if(temp.denominator != 0) {
+                            if(!temp.nsign) result = String.fromCharCode(parseInt(temp.valueOf()));
+                            else result = parseInt(temp.valueOf())+[];
+                        }
+                        else result = "너무 커엇...";
+                        console.log(result);
+                        $("body").text($("body").text()+result);
+                    }
+                    stack[1] = new Array();
+                } 
+            }
+        }
+
+        function main () {
+            Interpreter();
+        }
+
+        window.onload = main;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

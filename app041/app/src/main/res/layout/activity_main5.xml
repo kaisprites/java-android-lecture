@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/linearlayout"
+    tools:context=".Main5Activity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:onClick="onClickShowAlert"
+        android:text="경고창 띄우기"
+        android:textSize="36sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:onClick="onClickShowDate"
+        android:text="날짜보이기"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:onClick="onClickLogPrint"
+        android:text="로그프린트연결"
+        android:textSize="36sp"
+        android:typeface="normal" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickCheckWeekday"
+        android:text="오늘의요일은"
+        android:textSize="36sp" />
+</LinearLayout>

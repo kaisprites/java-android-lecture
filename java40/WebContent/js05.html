@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		document.getElementById('id2')
+		console.log(typeof id2)
+		id2Value = id2.value
+		console.log('당신의 id는 ' + id2Value)
+		pwValue = document.getElementById('pw').value
+		
+		if(id2Value.length == 0 || pwValue.length == 0 ){
+			alert('입력되지 않은 값 있음')
+		} else {
+			location.href = 'login.jsp? id = '  + id2Value + 'pw = ' + pwValue 
+		}
+	}
+</script>
+</head>
+<body>
+	<h3>로그인 화면</h3>
+	<hr color="red">
+	<p>id <input type="text" id="id"></p>
+	<p>pw <input type="text" id="pw"></p>
+	<button onclick="check()">check</button>
+</body>
+</html>

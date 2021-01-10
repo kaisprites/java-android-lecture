@@ -1,0 +1,17 @@
+16
+push 1
+push 2
+push 3
+push 4
+push 5
+dump
+pop
+pop
+front
+push 6
+back
+dump
+isEmpty
+clear
+isEmpty
+dump

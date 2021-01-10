@@ -1,0 +1,16 @@
+15
+push 1
+push 2
+front
+back
+size
+isEmpty
+pop
+pop
+pop
+size
+isEmpty
+pop
+push 3
+isEmpty
+front

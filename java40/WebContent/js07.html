@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function equal() {
+		text = document.getElementById('id').value
+		window.open('equal.jsp?id=' + text)
+	}
+	
+	function login() {
+		id = document.getElementById('id').value;
+		pw = document.getElementById('pw').value;
+		pwr = document.getElementById('pwr').value;
+		window.open('login.jsp?id=' + id + '&pw=' + pw + '&pwr=' + pwr)
+	}
+</script>
+</head>
+<style>
+body { background: rgb(240,240,240); text-align: center; }
+h1{ font-family:'arial black'; color:green; }
+input[type="text"] { width: 300px; height: 30px; }
+input[type="password"] { width: 300px; height: 30px; }
+.wrapper { display: inline-block; width: 500px; }
+.txtwrapper { text-align: left; }
+.txtboxname { font-weight: bold; }
+</style>
+<body>
+<h1>LOGIN</h1>
+<div class="wrapper">
+	<div class="txtwrapper">
+		<div class="txtboxname">아이디</div>
+		<div class="txtbox">
+			<input type="text" name="id" id="id">
+			<button onclick="equal()">id입력확인</button>
+		</div>
+	</div>
+	<div class="txtwrapper">
+		<div class="txtboxname" name="pw">비밀번호</div>
+		<div class="txtbox"><input type="password" name="pw" id="pw"></div>
+	</div>
+	<div class="txtwrapper">
+		<div class="txtboxname">비밀번호 확인</div>
+		<div class="txtbox">
+			<input type="password" name="pwr" id="pwr">
+			<button onclick="login()">로그인</button>	
+		</div>
+	</div>
+</div>
+</body>
+</html>

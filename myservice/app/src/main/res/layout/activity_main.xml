@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="백그라운드로 음악시작" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="백그라운드로 음악종료" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_vertical"
+        android:text="TextView"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/startTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="타이머시작" />
+
+    <Button
+        android:id="@+id/stopTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="타이머종료" />
+</LinearLayout>

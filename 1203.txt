@@ -1,0 +1,45 @@
+클래스 상속: 자식클래스가 부모클래스의 특징을 물려받는 것
+부모클래스를 상속받은 자식클래스는 부모클래스의 메서드들을 모두 구현해야 한다.
+
+인터페이스와 클래스의 관계 설명
+인터페이스는 클래스가 자신을 구현할 때 정의해야 하는 메서드들에 대한 정의이다.
+클래스는 인터페이스를 '구현'(implement)할 수 있으며 인터페이스의 모든 메서드를 구현해야 한다.
+
+오버로딩과 오버라이딩 비교 설명
+오버로딩은 
+
+JDBC는 무엇의 약자
+Java Database Connector
+자바가 DB와 연결할 수 있게 하는 라이브러리
+
+DBCP는 무엇의 약자
+Databace Connection Pool
+DB와 연결하는 객체를 싱글톤으로 관리할 수 있게 하는 라이브러리
+
+myBatis에서 필요한 xml파일 2가지, 비교설명
+config.xml: myBatis의 환경설정 문서(VO의 이름을 지정하는 typealias, mapper 파일을 대응시키는 mapper 등)
+mapper.xml: Java 코드에서 실행할 수 있게 SQL문을 메서드로 mapping한 문서
+
+Call by reference와 call by value의 차이:
+함수를 호출하여 parameter를 넘겨줄 때 Call by reference는 객체의 주소를 넘긴다.
+Call by value는 값을 넘긴다.
+자바에서는 원시자료형은 call by value, 객체는 call by reference로 값을 넘긴다.
+
+프레임워크란? 알고있는 프레임워크 종류 2가지 이상
+프레임워크는 개발자의 소프트웨어 이해를 돕고 생산성과 유지보수성을 높이기 위해 제시되는 뼈대 개발 환경을 의미한다
+Spring, Django 등이 있다.
+
+GC란? Garbage Collector 더 이상 참조되지 않는 객체의 메모리 할당을 해제하는 메모리 관리 방법
+객체는 힙 공간에 있다.
+
+스프링에서 IoC란? Inversion of Control
+원래 프로그래머가 객체를 생성하고 주입하던 전통적인 방법에서 벗어나 스프링 프레임워크가 객체를 생성하고 주입하는 것을 '제어 역전'이라고 표현
+
+POJO란? Plain Old Java Object
+일반적인 자바 객체로 클래스 상속/인터페이스/어노테이션이 필요한 bean에 대응되어 반드시 이들을 할 필요가 없다. 
+
+접근제어자 비교 설명
+private: 해당 객체만 접근할 수 있다.
+protected: 상속 관계에 있는 객체만 접근할 수 있다.
+default: 같은 패키지에 속하는 객체만 접근할 수 있다.
+private: 모든 객체가 접근할 수 있다.

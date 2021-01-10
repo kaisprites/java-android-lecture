@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="20dp"
+    tools:context=".Main3Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <HorizontalScrollView
+            android:scrollbarSize="10dp"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarDefaultDelayBeforeFade="500000"
+            android:orientation="horizontal"
+            android:layout_height="300dp"
+            android:layout_width="300dp"
+            android:id="@+id/scrollView3"
+            android:scrollbarThumbVertical="@android:color/tab_indicator_text"
+            android:scrollbarThumbHorizontal="@android:color/darker_gray"
+            android:layout_margin="30dp">
+
+            <TextView
+                android:layout_height="300dp"
+                android:layout_width="match_parent"
+                android:id="@+id/textView2"
+                android:text="@string/long_text">
+            </TextView>
+        </HorizontalScrollView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button01" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button02"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button03"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button04"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button05"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button06"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button07"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Button08"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,11 @@
+Thread superclass
+^
+StarThread subclass
+
+can extend only 1 superclass
+
+car < truck < coffeetruck
+	< taxi
+	
+wheel < for truck
+	  < for passenger < for bmw

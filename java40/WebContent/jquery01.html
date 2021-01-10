@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$('#b1').click(function() {
+		alert("나를 눌렀군요");
+	})
+	$('#b2').click(function() {
+		alert("나도 눌렀군요");
+	})
+	
+	id = $('#id').val();
+	pw = $('#pw').val(); 
+</script>
+</head>
+<body>
+<button id="b1">나를눌러</button>
+<button id="b2">나도눌러</button>
+<p>
+	id <input type="text" id="id"><br>
+	pw <input type="text" id="pw">
+</p>
+<button id="b3">나도눌러봐</button>
+</body>
+</html>
